@@ -12,8 +12,8 @@
   <div id="videobox">
     <video id="video" autoplay playsinline></video>
   </div>
-  <img src="mouth.png" class="face">
   <script src="index.js"></script>
 
+  <img src="mouth.png" class="face">
 </body>
 </html>
