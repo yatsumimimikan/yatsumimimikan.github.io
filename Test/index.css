@@ -13,6 +13,10 @@ body {
 }
 
 #video {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
   display: block;
   transform: rotateZ(180deg); /* ‚È‚º‚©“V’n”½“]‚·‚é‚Ì‚Å“V’n”½“]‚µ•Ô‚· */
 }
@@ -23,7 +27,7 @@ body {
   top: 0; left: 0;
   width: 100%; height: 100%;
 }
-#canvas .face{
+#video .face{
   position: relative;
   bottom: 0; right: 0; z-index: 2;
 }
