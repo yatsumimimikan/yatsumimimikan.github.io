@@ -9,7 +9,7 @@ const medias = {audio : false, video : {
 
 navigator.getUserMedia(medias, successCallback, errorCallback);
 
-requestAnimationFrame(draw);
+//requestAnimationFrame(draw);
 
 
 function successCallback(stream) {
@@ -20,10 +20,10 @@ function errorCallback(err) {
   alert(err);
 };
 
-function draw() {
+/*function draw() {
   canvas.width  = window.innerWidth;
   canvas.height = window.innerHeight;
   ctx.drawImage(video, 0, 0);
 
   requestAnimationFrame(draw);
-};
+}*/
