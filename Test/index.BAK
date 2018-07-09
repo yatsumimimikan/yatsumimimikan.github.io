@@ -9,11 +9,11 @@
 </head>
 <body>
   <canvas id="canvas"></canvas>
-  <script src="index.js"></script>
   <div id="videobox">
     <video id="video" autoplay playsinline></video>
   </div>
   <img src="mouth.png" class="face">
+  <script src="index.js"></script>
 
 </body>
 </html>
