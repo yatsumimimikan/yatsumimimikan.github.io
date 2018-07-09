@@ -8,9 +8,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
 <body>
-    <video id="video" autoplay playsinline></video>
-  <script src="index.js"></script>
 
-  <img src="face.png" class="face">
+    <canvas id="canvas"></canvas>
+       <div id="videobox">
+           <video id="video" autoplay playsinline></video>
+       </div>
+    <script src="index.js"></script>
+
+    <section id="body">
+         <img src="face.png" class="face">
+    </section>
+
 </body>
 </html>
