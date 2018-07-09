@@ -10,6 +10,5 @@
 <body>
   <video id="video" autoplay playsinline></video>
   <script src="index.js"></script>
-  <img src="face.png" class={ position:absolute; bottom:0%; right:0%; }>
 </body>
 </html>
