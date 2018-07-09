@@ -22,7 +22,7 @@ body {
   width: 100%; height: 100%;
   z-index: -100;
 }
-#canvas face{
+#canvas .face{
   position: absolute;
   bottom: 0; right: 0; z-index: 2;
 }
