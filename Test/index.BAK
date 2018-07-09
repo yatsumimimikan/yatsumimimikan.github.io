@@ -16,7 +16,7 @@
     <script src="index.js"></script>
 
     <section id="body">
-         <img src="face.png" class="face">
+         <img src="mouth.png" class="face">
     </section>
 
 </body>
