@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  background: #000;
-}
-
 #videobox {
   position: fixed;
   top: 0; left: 0;
@@ -22,12 +17,18 @@ body {
 }
 
 #canvas {
-  display: block;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
 }
-#video .face{
+
+#body   {
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#body .face{
   position: relative;
   bottom: 0; right: 0; z-index: 2;
 }
