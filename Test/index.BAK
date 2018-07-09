@@ -10,9 +10,10 @@
 <body>
   <canvas id="canvas"></canvas>
   <div id="videobox">
+    <video id="video" autoplay playsinline></video>
   </div>
   <script src="index.js"></script>
 
-  <img src="mouth.png" class="face">
+  <img src="fath.png" class="face">
 </body>
 </html>
