@@ -20,7 +20,7 @@ function FaceTimer() {
             {
              document.eyes.src = img[1];
             }
-        document.eyes.hspace = 10 + aX*10;
+        document.eyes.hspace = 60-count/2 +aX;
         document.eyes.vspace = 10 + aY*10;
 
        //口パク機能
