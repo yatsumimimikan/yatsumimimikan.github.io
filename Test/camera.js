@@ -13,7 +13,7 @@ requestAnimationFrame(draw);
 
 
 function successCallback(stream) {
-  video.srcObject = stream;
+  //video.srcObject = stream;
 };
 
 function errorCallback(err) {
