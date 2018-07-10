@@ -17,10 +17,11 @@
 
     <section id="body">
          <img src="face.png" class="face">
-         <img src="mouth.png" class="mouth">
+         <img src="mouth.png" name="mouth" class="mouth">
          <img src="eye_open.png" name="eyes" class="eye">
     </section>
 
-    <script src="eyes.js"></script>
+    <script src="faces.js"></script>
+    <script src="mouth.js"></script>
 </body>
 </html>
