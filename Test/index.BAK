@@ -13,13 +13,15 @@
        <div id="videobox">
            <video id="video" autoplay playsinline></video>
        </div>
-    <script src="index.js"></script>
--->
+=-->
+    <script src="camera.js"></script>
+
     <section id="body">
          <img src="face.png" class="face">
          <img src="mouth.png" class="mouth">
-         <img src="eye_open.png" class="eye">
+         <img src="eye_open.png" name="eyes" class="eye">
     </section>
 
+    <script src="eyes.js"></script>
 </body>
 </html>
