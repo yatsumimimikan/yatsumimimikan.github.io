@@ -28,5 +28,5 @@
 
 #body .face{
   position: relative;
-  bottom: 0; right: 100px; z-index: 2;
+  bottom: 0%; right: 0%; z-index: 2;
 }
