@@ -8,7 +8,7 @@ window.addEventListener("devicemotion", (dat) => {
 
 //まばたき
 img = new Array("eye_close.png","eye_open.png"); //*1
-count = Math.floor( Math.random() * 11 ); //*2
+count = Math.floor( Math.random() * 121 ); //*2
 
 
 //マイク口パク
