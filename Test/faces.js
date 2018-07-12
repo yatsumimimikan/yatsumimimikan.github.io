@@ -47,15 +47,10 @@ let LENGTH = 16,
 
     src.connect(analyser);
 
-var average = function(arr) {
-        var sum = 0;
-        arr.forEach(function(elm) {sum += elm;});
-        return sum/arr.length;
-    };
 
     setInterval(() => {
         soundArr = analyser.getByteTimeDomainData(LENGTH);
-        sound = average(soundArr);
+        sound = soundArr[0];//average(soundArr);
 
 	count--; 
 	if (count <= 0)
