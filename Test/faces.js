@@ -12,6 +12,11 @@ count = Math.floor( Math.random() * 121 ); //*2
 
 
 //マイク口パク
+var average = function(arr) {
+    var sum = 0;
+    arr.forEach(function(elm) {sum += elm;});
+    return sum/arr.length;
+};
 navigator.getUserMedia({audio: true}, successCallback, errorCallback);
 
 function successCallback(stream) {
@@ -29,16 +34,20 @@ function errorCallback(err) {
 
 function FaceTimer(stream) {
 
-let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let LENGTH = 16,
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     options  = {mediaStream : stream},
     src      = audioCtx.createMediaStreamSource(stream),
     analyser = audioCtx.createAnalyser(stream),
-    sound    = Uint8Array(1);
+    soundArr = Uint8Array(LENGTH),
+    sound    = 0;
 
     src.connect(analyser);
 
     setInterval(() => {
-        //sound = analyser.getByteTimeDomainData(1);
+        soundArr = analyser.getByteTimeDomainData(LENGTH);
+        sound = average(soundArr);
+
 	count--; 
 	if (count <= 0)
             {count = Math.floor( Math.random() * 121 );
@@ -53,10 +62,10 @@ let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
        //口パク機能
 
-        document.mouth.height = sound[0];
+        document.mouth.height = sound;
         
-        document.mouth.hspace = 60-sound[0] +aX;
-        document.mouth.vspace = (30-sound[0]) +aY;
+        document.mouth.hspace = 60-sound +aX;
+        document.mouth.vspace = (30-sound) +aY;
 
 
 
