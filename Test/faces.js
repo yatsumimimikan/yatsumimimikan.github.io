@@ -19,9 +19,9 @@ var average = function(arr) {
     return sum/arr.length;
 };
 */
-const mics = {audio : true},
-      btn  = document.getElementById("btn");
-navigator.getUserMedia(mics, successCallback, errorCallback);
+
+let   btn  = document.getElementById("btn");
+navigator.getUserMedia({audio : true}, successCallback, errorCallback);
 
 function successCallback(stream) {
 FaceTimer(stream);
