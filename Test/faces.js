@@ -35,7 +35,7 @@ function errorCallback(err) {
 };
 
 function FaceTimer(stream) {
-
+/*
 let LENGTH = 16,
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     options  = {mediaStream : stream},
@@ -45,6 +45,7 @@ let LENGTH = 16,
     sound    = 0;
 
     src.connect(analyser);
+*/
 
     setInterval(() => {
         //soundArr = analyser.getByteTimeDomainData(LENGTH);
@@ -63,11 +64,12 @@ let LENGTH = 16,
         document.eyes.vspace = 10 + aY*10;
 
        //口パク機能
+/*
         document.mouth.height = sound;
         
         document.mouth.hspace = 60-sound +aX;
         document.mouth.vspace = (30-sound) +aY;
-
+*/
 
     }, 30);
 	//次のタイマー呼びだし
