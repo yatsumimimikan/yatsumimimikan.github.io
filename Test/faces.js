@@ -13,8 +13,8 @@ count = Math.floor( Math.random() * 11 ); //*2
 
 //マイク口パク
 var sound = 0;
-//navigator.getUserMedia({audio: true}, successCallback, errorCallback);
-FaceTimer();
+navigator.getUserMedia({audio: true}, successCallback, errorCallback);
+//FaceTimer();
 
 function successCallback(stream) {
 FaceTimer();
@@ -40,7 +40,7 @@ function FaceTimer() {
         //sound = analyser.getByteTimeDomainData(1);
 	count--; 
 	if (count <= 0)
-            {count = Math.floor( Math.random() * 121 );
+            {count = Math.floor( Math.random() * 11 );
              document.eyes.src = img[0];
             }
         else
