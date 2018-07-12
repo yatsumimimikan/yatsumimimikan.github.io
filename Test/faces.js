@@ -41,7 +41,7 @@ let LENGTH = 16,
     options  = {mediaStream : stream},
     src      = audioCtx.createMediaStreamSource(stream),
     analyser = audioCtx.createAnalyser(stream),
-    soundArr = Uint8Array(LENGTH),
+    soundArr = new Uint8Array(LENGTH),
     sound    = 0;
 
     src.connect(analyser);
