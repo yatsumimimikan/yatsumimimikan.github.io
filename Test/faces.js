@@ -1,3 +1,4 @@
+//カメラ揺れ
 var aX = 0, aY = 0, aZ = 0;
 window.addEventListener("devicemotion", (dat) => {
     aX = dat.accelerationIncludingGravity.x;
@@ -5,12 +6,31 @@ window.addEventListener("devicemotion", (dat) => {
     aZ = dat.accelerationIncludingGravity.z;
 });
 
+//まばたき
 img = new Array("eye_close.png","eye_open.png"); //*1
 count = Math.floor( Math.random() * 121 ); //*2
-FaceTimer();
 
-function FaceTimer() {
+
+//マイク口パク
+navigator.getUserMedia({audio: true}, successCallback, errorCallback);
+
+
+function successCallback(stream) {
+FaceTimer(stream);
+/*
+      btn.addEventListener("click", () => {
+      FaceTimer(stream);
+    }, false);
+*/
+};
+
+function errorCallback(err) {
+  alert(err);
+};
+
+function FaceTimer(stream) {
 	//まばたき機能
+    setInterval(() => {
 	count--; 
 	if (count <= 0)
             {count = Math.floor( Math.random() * 121 );
@@ -31,7 +51,7 @@ function FaceTimer() {
 
 
 
-
+    }, 30);
 	//次のタイマー呼びだし
-	setTimeout("FaceTimer()",30); //*6
+	//setTimeout("FaceTimer()",30); //*6
 }
