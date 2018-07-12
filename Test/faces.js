@@ -12,6 +12,7 @@ count = Math.floor( Math.random() * 121 ); //*2
 
 
 //マイク口パク
+var sound = 0;
 navigator.getUserMedia({audio: true}, successCallback, errorCallback);
 
 
@@ -29,8 +30,14 @@ function errorCallback(err) {
 };
 
 function FaceTimer(stream) {
-	//まばたき機能
+
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)(),
+    options  = {mediaStream : stream},
+    src      = audioCtx.createMediaStreamSource(stream),
+    analyser = audioCtx.createAnalyser(stream);
+
     setInterval(() => {
+        sound = analyser.getByteTimeDomainData(1);
 	count--; 
 	if (count <= 0)
             {count = Math.floor( Math.random() * 121 );
@@ -44,10 +51,10 @@ function FaceTimer(stream) {
         document.eyes.vspace = 10 + aY*10;
 
        //口パク機能
-        document.mouth.height = count/2;
+        document.mouth.height = sound;
         
-        document.mouth.hspace = 60-count/2 +aX;
-        document.mouth.vspace = (30-count/4) +aY;
+        document.mouth.hspace = 60-sound +aX;
+        document.mouth.vspace = (30-sound) +aY;
 
 
 
