@@ -17,6 +17,7 @@ var average = function(arr) {
     arr.forEach(function(elm) {sum += elm;});
     return sum/arr.length;
 };
+const 
 navigator.getUserMedia({audio: true}, successCallback, errorCallback);
 
 function successCallback(stream) {
@@ -45,8 +46,8 @@ let LENGTH = 16,
     src.connect(analyser);
 
     setInterval(() => {
-        soundArr = analyser.getByteTimeDomainData(LENGTH);
-        sound = average(soundArr);
+        //soundArr = analyser.getByteTimeDomainData(LENGTH);
+        //sound = average(soundArr);
 
 	count--; 
 	if (count <= 0)
