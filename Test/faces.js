@@ -18,7 +18,7 @@ var average = function(arr) {
     return sum/arr.length;*/
 return 0;
 };
-const 
+
 navigator.getUserMedia({audio: true}, successCallback, errorCallback);
 
 function successCallback(stream) {
@@ -63,12 +63,10 @@ let LENGTH = 16,
         document.eyes.vspace = 10 + aY*10;
 
        //口パク機能
-
         document.mouth.height = sound;
         
         document.mouth.hspace = 60-sound +aX;
         document.mouth.vspace = (30-sound) +aY;
-
 
 
     }, 30);
