@@ -33,7 +33,7 @@ let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     options  = {mediaStream : stream},
     src      = audioCtx.createMediaStreamSource(stream),
     analyser = audioCtx.createAnalyser(stream),
-    sound    = Uint8Array(1);;
+    sound    = Uint8Array(1);
 
     src.connect(analyser);
 
