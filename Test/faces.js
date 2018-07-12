@@ -65,12 +65,12 @@ let LENGTH = 16,
         document.eyes.vspace = 10 + aY*10;
 
        //口パク機能
-/*
+
         document.mouth.height = sound;
         
         document.mouth.hspace = 60-sound +aX;
         document.mouth.vspace = (30-sound) +aY;
-*/
+
 
     }, 30);
 	//次のタイマー呼びだし
