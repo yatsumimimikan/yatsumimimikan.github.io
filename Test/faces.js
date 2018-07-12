@@ -20,7 +20,7 @@ var average = function(arr) {
 };
 */
 const mics = {audio : true},
-      face  = document.getElementById("face");
+      btn  = document.getElementById("btn");
 navigator.getUserMedia(mics, successCallback, errorCallback);
 
 function successCallback(stream) {
