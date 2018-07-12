@@ -14,7 +14,6 @@ count = Math.floor( Math.random() * 121 ); //*2
 //マイク口パク
 var sound = 0;
 navigator.getUserMedia({audio: true}, successCallback, errorCallback);
-//FaceTimer();
 
 function successCallback(stream) {
 FaceTimer(stream);
@@ -30,17 +29,17 @@ function errorCallback(err) {
 };
 
 function FaceTimer(stream) {
-/*
+
     audioCtx = new (window.AudioContext || window.webkitAudioContext)(),
     options  = {mediaStream : stream},
     src      = audioCtx.createMediaStreamSource(stream),
     analyser = audioCtx.createAnalyser(stream);
-*/
+
     setInterval(() => {
         //sound = analyser.getByteTimeDomainData(1);
 	count--; 
 	if (count <= 0)
-            {count = Math.floor( Math.random() * 11 );
+            {count = Math.floor( Math.random() * 121 );
              document.eyes.src = img[0];
             }
         else
