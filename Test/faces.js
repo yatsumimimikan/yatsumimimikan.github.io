@@ -13,11 +13,11 @@ count = Math.floor( Math.random() * 11 ); //*2
 
 //マイク口パク
 var sound = 0;
-//navigator.getUserMedia({audio: true}, successCallback, errorCallback);
-FaceTimer(stream);
+navigator.getUserMedia({audio: true}, successCallback, errorCallback);
+//FaceTimer();
 
 function successCallback(stream) {
-FaceTimer(stream);
+FaceTimer();
 /*
       btn.addEventListener("click", () => {
       FaceTimer(stream);
@@ -29,7 +29,7 @@ function errorCallback(err) {
   alert(err);
 };
 
-function FaceTimer(stream) {
+function FaceTimer() {
 /*
     audioCtx = new (window.AudioContext || window.webkitAudioContext)(),
     options  = {mediaStream : stream},
