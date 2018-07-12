@@ -24,10 +24,10 @@ const mics = {audio : true},
 navigator.getUserMedia(mics, successCallback, errorCallback);
 
 function successCallback(stream) {
-//FaceTimer(stream);
-      face.addEventListener("click", () => {
+FaceTimer(stream);
+   /*face.addEventListener("click", () => {
       FaceTimer(stream);
-    }, false);
+    }, false);*/
 };
 
 function errorCallback(err) {
