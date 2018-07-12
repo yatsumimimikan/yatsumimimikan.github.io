@@ -50,7 +50,7 @@ let LENGTH = 16,
 
     setInterval(() => {
         soundArr = analyser.getByteTimeDomainData(LENGTH);
-        //sound = average(soundArr);
+        sound = soundArr[0];//average(soundArr);
 
 	count--; 
 	if (count <= 0)
