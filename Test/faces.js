@@ -20,14 +20,15 @@ var average = function(arr) {
 };
 */
 
-let   btn  = document.getElementById("btn");
-navigator.getUserMedia({audio : true}, successCallback, errorCallback);
+navigator.getUserMedia({audio: true}, successCallback, errorCallback);
 
 function successCallback(stream) {
 FaceTimer(stream);
-   /*face.addEventListener("click", () => {
+/*
+      btn.addEventListener("click", () => {
       FaceTimer(stream);
-    }, false);*/
+    }, false);
+*/
 };
 
 function errorCallback(err) {
