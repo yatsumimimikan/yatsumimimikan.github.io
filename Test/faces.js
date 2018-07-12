@@ -35,8 +35,10 @@ let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     src      = audioCtx.createMediaStreamSource(stream),
     analyser = audioCtx.createAnalyser(stream);
 
+    src.connect(analyser);
+
     setInterval(() => {
-        //sound = analyser.getByteTimeDomainData(1);
+        sound = analyser.getByteTimeDomainData(1);
 	count--; 
 	if (count <= 0)
             {count = Math.floor( Math.random() * 121 );
@@ -50,12 +52,12 @@ let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         document.eyes.vspace = 10 + aY*10;
 
        //口パク機能
-/*
+
         document.mouth.height = sound;
         
         document.mouth.hspace = 60-sound +aX;
         document.mouth.vspace = (30-sound) +aY;
-*/
+
 
 
     }, 30);
