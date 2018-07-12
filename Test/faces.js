@@ -38,7 +38,7 @@ let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     src.connect(analyser);
 
     setInterval(() => {
-        sound = analyser.getByteTimeDomainData(1);
+        //sound = analyser.getByteTimeDomainData(1);
 	count--; 
 	if (count <= 0)
             {count = Math.floor( Math.random() * 121 );
