@@ -17,7 +17,7 @@ navigator.getUserMedia({audio: true}, successCallback, errorCallback);
 //FaceTimer();
 
 function successCallback(stream) {
-FaceTimer();
+FaceTimer(stream);
 /*
       btn.addEventListener("click", () => {
       FaceTimer(stream);
@@ -29,7 +29,7 @@ function errorCallback(err) {
   alert(err);
 };
 
-function FaceTimer() {
+function FaceTimer(stream) {
 /*
     audioCtx = new (window.AudioContext || window.webkitAudioContext)(),
     options  = {mediaStream : stream},
