@@ -53,10 +53,10 @@ let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
        //口パク機能
 
-        document.mouth.height = sound;
+        document.mouth.height = sound[0];
         
-        document.mouth.hspace = 60-sound +aX;
-        document.mouth.vspace = (30-sound) +aY;
+        document.mouth.hspace = 60-sound[0] +aX;
+        document.mouth.vspace = (30-sound[0]) +aY;
 
 
 
