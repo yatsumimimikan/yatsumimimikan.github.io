@@ -19,15 +19,15 @@ var average = function(arr) {
     return sum/arr.length;
 };
 */
-navigator.getUserMedia({audio: true}, successCallback, errorCallback);
+const mics = {audio : true},
+      face  = document.getElementById("face");
+navigator.getUserMedia(mics, successCallback, errorCallback);
 
 function successCallback(stream) {
-FaceTimer(stream);
-/*
-      btn.addEventListener("click", () => {
+//FaceTimer(stream);
+      face.addEventListener("click", () => {
       FaceTimer(stream);
     }, false);
-*/
 };
 
 function errorCallback(err) {
