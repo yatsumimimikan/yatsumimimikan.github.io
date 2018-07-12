@@ -13,9 +13,10 @@ count = Math.floor( Math.random() * 121 ); //*2
 
 //マイク口パク
 var average = function(arr) {
-    var sum = 0;
+    /*var sum = 0;
     arr.forEach(function(elm) {sum += elm;});
-    return sum/arr.length;
+    return sum/arr.length;*/
+return 0;
 };
 const 
 navigator.getUserMedia({audio: true}, successCallback, errorCallback);
