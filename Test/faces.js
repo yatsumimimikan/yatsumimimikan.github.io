@@ -37,7 +37,7 @@ function FaceTimer(stream) {
     analyser = audioCtx.createAnalyser(stream);
 
     setInterval(() => {
-        sound = analyser.getByteTimeDomainData(1);
+        //sound = analyser.getByteTimeDomainData(1);
 	count--; 
 	if (count <= 0)
             {count = Math.floor( Math.random() * 121 );
@@ -51,11 +51,12 @@ function FaceTimer(stream) {
         document.eyes.vspace = 10 + aY*10;
 
        //口パク機能
+/*
         document.mouth.height = sound;
         
         document.mouth.hspace = 60-sound +aX;
         document.mouth.vspace = (30-sound) +aY;
-
+*/
 
 
     }, 30);
