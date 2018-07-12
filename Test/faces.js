@@ -35,7 +35,7 @@ function errorCallback(err) {
 };
 
 function FaceTimer(stream) {
-/*
+
 let LENGTH = 16,
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     options  = {mediaStream : stream},
@@ -45,7 +45,7 @@ let LENGTH = 16,
     sound    = 0;
 
     src.connect(analyser);
-*/
+
 
     setInterval(() => {
         //soundArr = analyser.getByteTimeDomainData(LENGTH);
