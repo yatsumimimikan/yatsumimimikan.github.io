@@ -3,7 +3,7 @@ const medias = {audio : false, video : {
           exact : "environment" // リアカメラにアクセス
         }
       }},
-      video  = document.getElementById("video");
+      video  = document.getElementById("video"),
       canvas = document.getElementById("canvas"),
       ctx    = canvas.getContext("2d");
 
