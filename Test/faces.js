@@ -30,7 +30,7 @@ function errorCallback(err) {
 
 function FaceTimer(stream) {
 
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)(),
+let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     options  = {mediaStream : stream},
     src      = audioCtx.createMediaStreamSource(stream),
     analyser = audioCtx.createAnalyser(stream);
