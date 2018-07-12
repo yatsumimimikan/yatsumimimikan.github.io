@@ -12,7 +12,6 @@ count = Math.floor( Math.random() * 121 ); //*2
 
 
 //マイク口パク
-var sound = 0;
 navigator.getUserMedia({audio: true}, successCallback, errorCallback);
 
 function successCallback(stream) {
@@ -33,7 +32,8 @@ function FaceTimer(stream) {
 let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     options  = {mediaStream : stream},
     src      = audioCtx.createMediaStreamSource(stream),
-    analyser = audioCtx.createAnalyser(stream);
+    analyser = audioCtx.createAnalyser(stream),
+    sound    = Uint8Array(1);;
 
     src.connect(analyser);
 
