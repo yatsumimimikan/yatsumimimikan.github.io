@@ -49,7 +49,7 @@ let LENGTH = 16,
 
 
     setInterval(() => {
-        //soundArr = analyser.getByteTimeDomainData(LENGTH);
+        soundArr = analyser.getByteTimeDomainData(LENGTH);
         //sound = average(soundArr);
 
 	count--; 
