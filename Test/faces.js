@@ -42,7 +42,7 @@ function FaceTimer() {
 
 
        //Мы
-        if(isTouch == 1)
+        if(isTouch == 0)
         {
              document.mouth.src = mouth_c[countInt%3];
         }
@@ -51,7 +51,7 @@ function FaceTimer() {
              document.mouth.src = mouth_o[countInt%12];
         }
 
-        document.mouth.hspace = 10 + aY/2;
+        document.mouth.hspace = 10 + aY*3;
 
        //ЦЏ
 	if (eyecount <= 0)
@@ -62,8 +62,8 @@ function FaceTimer() {
             {
              document.eyes.src = eye_o[countInt%3];
             }
-        document.eyes.hspace = 10 + aY;
-        document.eyes.vspace = 10 + aX;
+        document.eyes.hspace = 10 + aY*5;
+        document.eyes.vspace = 10 + aX*5;
 
 	if (eyecount <= 0)
             {eyecount = Math.floor( Math.random() * 501 );
