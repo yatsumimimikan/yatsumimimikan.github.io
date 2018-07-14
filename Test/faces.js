@@ -72,8 +72,8 @@ function FaceTimer() {
             {
              document.eyes.src = eye_o[countInt%3];
             }
-        document.eyes.hspace = 40 + aY*5;
-        document.eyes.vspace = 40 + aZ*7;
+        document.eyes.hspace = 40 + aY*10;
+        document.eyes.vspace = 40 + aZ*3;
 
 	if (eyecount <= 0)
             {eyecount = Math.floor( Math.random() * 1001 );
