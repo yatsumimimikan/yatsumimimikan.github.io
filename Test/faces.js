@@ -39,11 +39,11 @@ function FaceTimer() {
         if(halfsteps == 0)
         {
             countInt = (countInt + 1) %12;
-            halfsteps = 0;
+            halfsteps = 1;
         }
         else
         {
-            halfsteps = 1;
+            halfsteps = 0;
         }
 
        //‘Ì
@@ -72,7 +72,7 @@ function FaceTimer() {
              document.eyes.src = eye_o[countInt%3];
             }
         document.eyes.hspace = 10 + aY*5;
-        document.eyes.vspace = 10 + aX*5;
+        document.eyes.vspace = 20 + aX*10;
 
 	if (eyecount <= 0)
             {eyecount = Math.floor( Math.random() * 1001 );
