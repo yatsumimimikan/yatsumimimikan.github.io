@@ -44,7 +44,7 @@ function FaceTimer() {
 
 
        //‘Ì
-        document.fath.src = faceandbody[countInt%3];
+        document.face.src = faceandbody[countInt%3];
 
        //Œû
         if(isTouch == 0)
@@ -56,7 +56,7 @@ function FaceTimer() {
              document.mouth.src = mouth_o[countInt%3];
         }
 
-        document.mouth.hspace = 20 + aY*5;
+        document.mouth.hspace = 10 + aY*5;
 
 
        //–Ú
@@ -68,8 +68,8 @@ function FaceTimer() {
             {
              document.eyes.src = eye_o[countInt%3];
             }
-        document.eyes.hspace = 20 + aY*5;
-        document.eyes.vspace = 20 - aX*5;
+        document.eyes.hspace = 10 + aY*5;
+        document.eyes.vspace = 10 + aX*5;
 
 
 
