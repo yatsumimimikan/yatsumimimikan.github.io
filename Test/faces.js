@@ -1,10 +1,10 @@
 //ƒJƒƒ‰—h‚ê
-var aX = 0, aY = 0, aZ = 0;/*
+var aX = 0, aY = 0, aZ = 0;
 window.addEventListener("devicemotion", (dat) => {
     aX = dat.accelerationIncludingGravity.x;
     aY = dat.accelerationIncludingGravity.y;
     aZ = dat.accelerationIncludingGravity.z;
-});*/
+});
 
 //‚Ü‚Î‚½‚«‚Æ‚©
 eye_o = new Array("eye_1.png","eye_2.png","eye_3.png");

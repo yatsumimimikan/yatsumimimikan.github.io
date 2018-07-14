@@ -26,16 +26,16 @@
 }
 
 #body .face{
-  position: absolute;
+  position: fixed;
   bottom: 0%; right: 0%; z-index: 2;
 }
 
 #body .mouth{
-  position: absolute;
+  position: fixed;
   bottom: 0%; right: -10px; z-index: 4;
 }
 
 #body .eye{
-  position: absolute;
+  position: fixed;
   bottom: -10px; right: -10px; z-index: 3;
 }
