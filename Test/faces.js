@@ -1,10 +1,10 @@
 //ƒJƒƒ‰—h‚ê
-var aX = 0, aY = 0, aZ = 0;
+var aX = 0, aY = 0, aZ = 0;/*
 window.addEventListener("devicemotion", (dat) => {
     aX = dat.accelerationIncludingGravity.x;
     aY = dat.accelerationIncludingGravity.y;
     aZ = dat.accelerationIncludingGravity.z;
-});
+});*/
 
 //‚Ü‚Î‚½‚«‚Æ‚©
 eye_o = new Array("eye_1.png","eye_2.png","eye_3.png");
@@ -35,45 +35,45 @@ function FaceTimer() {
     setInterval(() => {
 
 	count -= Math.abs(aX)+Math.abs(aY)+Math.abs(aZ); 
-        countInt = Math.floor(count);
-	if (count <= 0)
-            {count = Math.floor( Math.random() * 1001 );
-             countInt = 0;
-            }
-
 
 
        //‘Ì
-        document.face.src = faceandbody[countInt%3];
+        document.face.src = faceandbody[countInt];
+
 
        //Œû
         if(isTouch == 0)
         {
-             document.mouth.src = mouth_c[countInt%3];
+             document.mouth.src = mouth_c[countInt];
         }
         else
         {
-             document.mouth.src = mouth_o[countInt%3];
+             document.mouth.src = mouth_o[countInt];
         }
 
-        document.mouth.vspace = 10 + aX/2;
-
+        document.mouth.hspace = 10 + aY/2;
 
        //–Ú
-	if (countInt <= 0)
+	if (count <= 0)
             {
-             document.eyes.src = eye_c[countInt%3];
+             document.eyes.src = eye_c[countInt];
             }
         else
             {
-             document.eyes.src = eye_o[countInt%3];
+             document.eyes.src = eye_o[countInt];
             }
         document.eyes.hspace = 10 + aY;
         document.eyes.vspace = 10 + aX;
 
 
+	if (count <= 0)
+            {count = Math.floor( Math.random() * 1001 );
+             countInt = 0;
+            }
+        else
+            {
+             countInt = Math.floor(count) % 3;
+            }
 
-
-
-    }, 30);
+    }, 60);
 }
