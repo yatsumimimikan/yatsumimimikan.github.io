@@ -9,7 +9,7 @@ window.addEventListener("devicemotion", (dat) => {
 //‚Ü‚Î‚½‚«‚Æ‚©
 eye_o = new Array("eye_1.png","eye_2.png","eye_3.png");
 eye_c = new Array("eye_c_1.png","eye_c_2.png","eye_c_3.png");
-mouth_o = new Array("mouth_1.png","mouth_2.png","mouth_3.png","mouth_c_1.png","mouth_1.png","mouth_2.png","mouth_3.png","mouth_c_2.png","mouth_1.png","mouth_2.png","mouth_3.png","mouth_c_3.png");
+mouth_o = new Array("mouth_1.png","mouth_2.png","mouth_3.png","mouth_c_1.png","mouth_2.png","mouth_1.png","mouth_3.png","mouth_c_2.png","mouth_3.png","mouth_2.png","mouth_1.png","mouth_c_3.png");
 mouth_c = new Array("mouth_c_1.png","mouth_c_2.png","mouth_c_3.png");
 faceandbody = new Array("face_1.png","face_2.png","face_3.png");
 count = Math.floor( Math.random() * 501 ); //*2
@@ -42,7 +42,7 @@ function FaceTimer() {
 
 
        //Œû
-        if(isTouch == 0)
+        if(isTouch == 1)
         {
              document.mouth.src = mouth_c[countInt%3];
         }
