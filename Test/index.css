@@ -32,7 +32,7 @@
 
 #body .mouth{
   position: absolute;
-  bottom: -20px; right: -20px; z-index: 3;
+  bottom: 0%; right: -20px; z-index: 3;
 }
 
 #body .eye{

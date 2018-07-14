@@ -38,16 +38,15 @@ function FaceTimer() {
         countInt = Math.floor(count);
 	if (count <= 0)
             {count = Math.floor( Math.random() * 1001 );
-             document.eyes.src = eye_c[countInt%3];
+             countInt = 0;
             }
-        else
-            {
-             document.eyes.src = eye_o[countInt%3];
-            }
-        document.eyes.hspace = 20 + aY*10;
-        document.eyes.vspace = 20 - aX*10;
 
-       //口パク機能
+
+
+       //体
+        document.fath.src = faceandbody[countInt%3];
+
+       //口
         if(isTouch == 0)
         {
              document.mouth.src = mouth_c[countInt%3];
@@ -57,8 +56,24 @@ function FaceTimer() {
              document.mouth.src = mouth_o[countInt%3];
         }
 
-        document.mouth.hspace = 20 + aY*10;
+        document.mouth.hspace = 20 + aY*5;
 
-        document.fath.src = faceandbody[countInt%3];
+
+       //目
+	if (countInt <= 0)
+            {
+             document.eyes.src = eye_c[countInt%3];
+            }
+        else
+            {
+             document.eyes.src = eye_o[countInt%3];
+            }
+        document.eyes.hspace = 20 + aY*5;
+        document.eyes.vspace = 20 - aX*5;
+
+
+
+
+
     }, 30);
 }
