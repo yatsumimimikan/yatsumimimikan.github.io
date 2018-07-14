@@ -8,7 +8,7 @@ window.addEventListener("devicemotion", (dat) => {
 
 //まばたき
 img = new Array("eye_close.png","eye_open.png"); //*1
-count = Math.floor( Math.random() * 101 ); //*2
+count = Math.floor( Math.random() * 1001 ); //*2
 
 //口パク
 var hitarea = document.getElementById('hitarea'),
@@ -31,15 +31,15 @@ function FaceTimer() {
 
 	count -= Math.abs(aX)+Math.abs(aY)+Math.abs(aZ); 
 	if (count <= 0)
-            {count = Math.floor( Math.random() * 101 );
+            {count = Math.floor( Math.random() * 1001 );
              document.eyes.src = img[0];
             }
         else
             {
              document.eyes.src = img[1];
             }
-        document.eyes.hspace = aY*10;
-        document.eyes.vspace = aZ*10;
+        document.eyes.hspace = 20 + aY*10;
+        document.eyes.vspace = 20 - aZ*10;
 
        //口パク機能
         if(isTouch == 0)
