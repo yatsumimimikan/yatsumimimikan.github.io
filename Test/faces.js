@@ -10,47 +10,24 @@ window.addEventListener("devicemotion", (dat) => {
 img = new Array("eye_close.png","eye_open.png"); //*1
 count = Math.floor( Math.random() * 121 ); //*2
 
+//口パク
+var hitarea = document.getElementById('hitarea'),
+    isTouch = 0;
 
-//マイク口パク
-/*
-var average = function(arr) {
-    var sum = 0;
-    arr.forEach(function(elm) {sum += elm;});
-    return sum/arr.length;
-};
-*/
 
-navigator.getUserMedia({audio: true}, successCallback, errorCallback);
+/*var setTouch = function(eventname){
+    isTouch = eventname;
+}*/
 
-function successCallback(stream) {
-FaceTimer(stream);
-/*
-      btn.addEventListener("click", () => {
-      FaceTimer(stream);
-    }, false);
-*/
-};
+hitarea.addEventListener('touchstart',function(event){isTouch = 1;},false);
+hitarea.addEventListener('touchend',function(event){isTouch = 0;},false);
 
-function errorCallback(err) {
-  alert(err);
-};
+FaceTimer();
 
-function FaceTimer(stream) {
-
-let LENGTH = 16,
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    options  = {mediaStream : stream},
-    src      = audioCtx.createMediaStreamSource(stream),
-    analyser = audioCtx.createAnalyser(stream),
-    soundArr = new Uint8Array(LENGTH),
-    sound    = 0;
-
-    src.connect(analyser);
+function FaceTimer() {
 
 
     setInterval(() => {
-        //soundArr = analyser.getByteTimeDomainData(LENGTH);
-        //sound = average(soundArr);
 
 	count--; 
 	if (count <= 0)
@@ -65,14 +42,14 @@ let LENGTH = 16,
         document.eyes.vspace = 10 + aY*10;
 
        //口パク機能
-/*
-        document.mouth.height = sound;
-        
-        document.mouth.hspace = 60-sound +aX;
-        document.mouth.vspace = (30-sound) +aY;
-*/
+        if(isTouch == 0)
+        {
+            document.mouth.height = count;
+        }
+        else
+        {
+            document.mouth.height = 0;
+        }
 
     }, 30);
-	//次のタイマー呼びだし
-	//setTimeout("FaceTimer()",30); //*6
 }
