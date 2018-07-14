@@ -12,7 +12,7 @@ eye_c = new Array("eye_c_1.png","eye_c_2.png","eye_c_3.png");
 mouth_o = new Array("mouth_1.png","mouth_2.png","mouth_3.png");
 mouth_c = new Array("mouth_c_1.png","mouth_c_2.png","mouth_c_3.png");
 faceandbody = new Array("face_1.png","face_2.png","face_3.png");
-count = Math.floor( Math.random() * 1001 ); //*2
+count = Math.floor( Math.random() * 501 ); //*2
 countInt = Math.floor(count);
 
 //ŒûƒpƒN
@@ -67,7 +67,7 @@ function FaceTimer() {
 
 
 	if (count <= 0)
-            {count = Math.floor( Math.random() * 1001 );
+            {count = Math.floor( Math.random() * 501 );
              countInt = 0;
             }
         else
