@@ -13,7 +13,7 @@
        <div id="videobox">
            <video id="video" autoplay playsinline></video>
        </div>
-    <script src="camera.js"></script>
+   <!--<script src="camera.js"></script>-->
 
     <section id="body">
          <div id="hitarea"><img src="face_1.png" name="face" class="face">
