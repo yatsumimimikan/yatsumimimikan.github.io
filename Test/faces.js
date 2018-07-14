@@ -38,8 +38,8 @@ function FaceTimer() {
             {
              document.eyes.src = img[1];
             }
-        document.eyes.hspace = 10 + aY*10;
-        document.eyes.vspace = 10 - aX*10;
+        document.eyes.hspace = 20 + aY*10;
+        document.eyes.vspace = 20 - aZ*10;
 
        //口パク機能
         if(isTouch == 0)
