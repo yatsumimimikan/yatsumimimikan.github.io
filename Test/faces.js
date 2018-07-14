@@ -6,8 +6,12 @@ window.addEventListener("devicemotion", (dat) => {
     aZ = dat.accelerationIncludingGravity.z;
 });
 
-//まばたき
-img = new Array("eye_close.png","eye_open.png"); //*1
+//まばたきとか
+eye_o = new Array("eye_1.png","eye_2.png","eye_3.png");
+eye_c = new Array("eye_c_1.png","eye_c_2.png","eye_c_3.png");
+mouth_o = new Array("mouth_1.png","mouth_2.png","mouth_3.png");
+mouth_c = new Array("mouth_c_1.png","mouth_c_2.png","mouth_c_3.png");
+faceandbody = new Array("face_1.png","face_2.png","face_3.png");
 count = Math.floor( Math.random() * 1001 ); //*2
 
 //口パク
@@ -32,24 +36,27 @@ function FaceTimer() {
 	count -= Math.abs(aX)+Math.abs(aY)+Math.abs(aZ); 
 	if (count <= 0)
             {count = Math.floor( Math.random() * 1001 );
-             document.eyes.src = img[0];
+             document.eyes.src = eye_c[count%3];
             }
         else
             {
-             document.eyes.src = img[1];
+             document.eyes.src = eye_o[count%3];
             }
         document.eyes.hspace = 20 + aY*10;
-        document.eyes.vspace = 20 - aZ*10;
+        document.eyes.vspace = 20 - aX*10;
 
        //口パク機能
         if(isTouch == 0)
         {
-            document.mouth.height = count;
+             document.mouth.src = mouth_c[count%3];
         }
         else
         {
-            document.mouth.height = 0;
+             document.mouth.src = mouth_o[count%3];
         }
 
+        document.mouth.hspace = 20 + aY*10;
+
+        document.fath.src = faceandbody[count%3];
     }, 30);
 }
