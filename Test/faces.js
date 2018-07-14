@@ -9,7 +9,7 @@ window.addEventListener("devicemotion", (dat) => {
 //‚Ü‚Î‚½‚«‚Æ‚©
 eye_o = new Array("eye_1.png","eye_2.png","eye_3.png");
 eye_c = new Array("eye_c_1.png","eye_c_2.png","eye_c_3.png");
-mouth_o = new Array("mouth_1.png","mouth_2.png","mouth_3.png");
+mouth_o = new Array("mouth_1.png","mouth_2.png","mouth_3.png","mouth_c_1.png","mouth_1.png","mouth_2.png","mouth_3.png","mouth_c_2.png","mouth_1.png","mouth_2.png","mouth_3.png","mouth_c_3.png");
 mouth_c = new Array("mouth_c_1.png","mouth_c_2.png","mouth_c_3.png");
 faceandbody = new Array("face_1.png","face_2.png","face_3.png");
 count = Math.floor( Math.random() * 501 ); //*2
@@ -38,17 +38,17 @@ function FaceTimer() {
 
 
        //‘Ì
-        document.face.src = faceandbody[countInt];
+        document.face.src = faceandbody[countInt%3];
 
 
        //Œû
         if(isTouch == 0)
         {
-             document.mouth.src = mouth_c[countInt];
+             document.mouth.src = mouth_c[countInt%3];
         }
         else
         {
-             document.mouth.src = mouth_o[countInt];
+             document.mouth.src = mouth_o[countInt%12];
         }
 
         document.mouth.hspace = 10 + aY/2;
@@ -56,11 +56,11 @@ function FaceTimer() {
        //–Ú
 	if (count <= 0)
             {
-             document.eyes.src = eye_c[countInt];
+             document.eyes.src = eye_c[countInt%3];
             }
         else
             {
-             document.eyes.src = eye_o[countInt];
+             document.eyes.src = eye_o[countInt%3];
             }
         document.eyes.hspace = 10 + aY;
         document.eyes.vspace = 10 + aX;
@@ -72,7 +72,7 @@ function FaceTimer() {
             }
         else
             {
-             countInt = Math.floor(count) % 3;
+             countInt = Math.floor(count);
             }
 
     }, 60);
