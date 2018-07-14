@@ -13,12 +13,12 @@
        <div id="videobox">
            <video id="video" autoplay playsinline></video>
        </div>
-    <!--<script src="camera.js"></script>-->
+    <script src="camera.js"></script>
 
     <section id="body">
-         <img src="face_1.png" name="face" class="face">
-         <div id="hitarea"><img src="mouth_1.png" name="mouth" class="mouth"></div>
-         <img src="eye_1.png" name="eyes" class="eye">
+         <div id="hitarea"><img src="face_1.png" name="face" class="face">
+         <img src="mouth_1.png" name="mouth" class="mouth">
+         <img src="eye_1.png" name="eyes" class="eye"></div>
 <!--上端に出るミニ映像何
 サブミットのたびに無関係なところの挙動が変わる-->
     </section>
