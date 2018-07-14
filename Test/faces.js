@@ -12,8 +12,9 @@ eye_c = new Array("eye_c_1.png","eye_c_2.png","eye_c_3.png");
 mouth_o = new Array("mouth_1.png","mouth_2.png","mouth_3.png","mouth_c_1.png","mouth_2.png","mouth_1.png","mouth_3.png","mouth_c_2.png","mouth_3.png","mouth_2.png","mouth_1.png","mouth_c_3.png");
 mouth_c = new Array("mouth_c_1.png","mouth_c_2.png","mouth_c_3.png");
 faceandbody = new Array("face_1.png","face_2.png","face_3.png");
-eyecount = Math.floor( Math.random() * 501 ); //*2
+eyecount = Math.floor( Math.random() * 1001 ); //*2
 countInt = 0;
+halfsteps = 0;
 
 //ŒûƒpƒN
 var hitarea = document.getElementById('hitarea'),
@@ -35,7 +36,15 @@ function FaceTimer() {
     setInterval(() => {
 
 	eyecount -= Math.abs(aX)+Math.abs(aY)+Math.abs(aZ); 
-        countInt = (countInt + 1) %12;
+        if(halfsteps == 0)
+        {
+            countInt = (countInt + 1) %12;
+            halfsteps = 0;
+        }
+        else
+        {
+            halfsteps = 1;
+        }
 
        //‘Ì
         document.face.src = faceandbody[countInt%3];
@@ -66,8 +75,8 @@ function FaceTimer() {
         document.eyes.vspace = 10 + aX*5;
 
 	if (eyecount <= 0)
-            {eyecount = Math.floor( Math.random() * 501 );
+            {eyecount = Math.floor( Math.random() * 1001 );
              }
 
-    }, 60);
+    }, 30);
 }
