@@ -36,48 +36,52 @@ function FaceTimer() {
     setInterval(() => {
 
 	eyecount -= Math.abs(aX)+Math.abs(aY)+Math.abs(aZ); 
-        if(halfsteps == 0)
+        if(halfsteps == 0)//アニメは2フレームに一度更新する
         {
             countInt = (countInt + 1) %12;
             halfsteps = 1;
+
+            //体
+            document.face.src = faceandbody[countInt%3];
+
+            //口
+            if(isTouch == 0)
+            {
+                 document.mouth.src = mouth_c[countInt%3];
+            }
+            else
+            {
+                 document.mouth.src = mouth_o[countInt%12];
+            }
+
+            //目
+            if (eyecount <= 0)
+            {
+                 document.eyes.src = eye_c[countInt%3];
+                 eyecount = Math.floor( Math.random() * 1001 );
+            }
+            else
+            {
+                 document.eyes.src = eye_o[countInt%3];
+            }
         }
         else
         {
             halfsteps = 0;
         }
 
-       //体
-        document.face.src = faceandbody[countInt%3];
 
 
-       //口
-        if(isTouch == 0)
-        {
-             document.mouth.src = mouth_c[countInt%3];
-        }
-        else
-        {
-             document.mouth.src = mouth_o[countInt%12];
-        }
-
+        //座標は毎フレーム更新する
+        //口
         document.mouth.hspace = 30 + aY*3;
         document.mouth.vspace = 15 - aZ*2;
 
-       //目
-	if (eyecount <= 0)
-            {
-             document.eyes.src = eye_c[countInt%3];
-            }
-        else
-            {
-             document.eyes.src = eye_o[countInt%3];
-            }
+        //目
         document.eyes.hspace = 40 + aY*10;
         document.eyes.vspace = 40 - aZ*3;
 
-	if (eyecount <= 0)
-            {eyecount = Math.floor( Math.random() * 1001 );
-             }
+
 
     }, 30);
 }
