@@ -70,16 +70,14 @@ function FaceTimer() {
             halfsteps = 0;
         }
 
-
-
         //座標は毎フレーム更新する
         //口
-        document.mouth.hspace = 30 + aY*3;
-        document.mouth.vspace = 15 - aZ*2;
+        document.mouth.hspace = 30 - aY*3;
+        document.mouth.vspace = 15 + aZ*2;
 
         //目
-        document.eyes.hspace = 40 + aY*10;
-        document.eyes.vspace = 40 - aZ*3;
+        document.eyes.hspace = 40 - aY*10;
+        document.eyes.vspace = 40 + aZ*3;
 
 
 
