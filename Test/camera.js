@@ -9,15 +9,15 @@ const medias = {audio : false, video : {
 
 navigator.getUserMedia(medias, successCallback, errorCallback);
 
-requestAnimationFrame(draw);
 
 
 function successCallback(stream) {
   video.srcObject = stream;
+  requestAnimationFrame(draw);
 };
 
 function errorCallback(err) {
-  alert(err);
+  blue();
 };
 
 function draw() {
@@ -26,4 +26,11 @@ function draw() {
   ctx.drawImage(video, 0, 0);
 
   requestAnimationFrame(draw);
+}
+
+function blue() {
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+    ctx.fillStyle = '#0000ff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
