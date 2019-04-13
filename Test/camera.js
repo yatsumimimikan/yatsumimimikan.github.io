@@ -17,8 +17,8 @@ navigator.mediaDevices.getUserMedia(medias)
 });
 
 function draw() {
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight * 1.2;
+  canvas.width  = window.innerWidth * 5;
+  canvas.height = window.innerHeight * 5;
   ctx.drawImage(video, 0, 0);
 
   requestAnimationFrame(draw);
