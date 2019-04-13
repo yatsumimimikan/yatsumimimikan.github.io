@@ -12,7 +12,7 @@ body {
 
 #video {
   display: block;
-  transform: rotateZ(180deg); /* ‚È‚º‚©“V’n”½“]‚·‚é‚Ì‚Å“V’n”½“]‚µ•Ô‚· */
+  //transform: rotateZ(180deg); /* ‚È‚º‚©“V’n”½“]‚·‚é‚Ì‚Å“V’n”½“]‚µ•Ô‚· */
 }
 
 #canvas {
