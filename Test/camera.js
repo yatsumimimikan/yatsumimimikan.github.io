@@ -1,20 +1,20 @@
-const medias = {audio : false, video : true},
+const medias = {audio : false, video : {
+        facingMode : {
+          exact : "environment" // リアカメラにアクセス
+        }
+      }},
       video  = document.getElementById("video"),
       canvas = document.getElementById("canvas"),
       ctx    = canvas.getContext("2d");
 
-navigator.mediaDevices.getUserMedia(medias, successCallback, errorCallback);
-
-
-
-function successCallback(stream) {
+navigator.mediaDevices.getUserMedia(medias)
+.then(function(stream) { //successCallback
   video.srcObject = stream;
   requestAnimationFrame(draw);
-};
-
-function errorCallback(err) {
+})
+.catch(function (err) { //errorCallback
   blue();
-};
+});
 
 function draw() {
   canvas.width  = window.innerWidth;
