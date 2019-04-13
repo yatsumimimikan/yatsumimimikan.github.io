@@ -7,7 +7,7 @@ const medias = {audio : false, video : {
       canvas = document.getElementById("canvas"),
       ctx    = canvas.getContext("2d");
 
-navigator.getUserMedia(medias, successCallback, errorCallback);
+MediaDevices.getUserMedia(medias, successCallback, errorCallback);
 
 
 
