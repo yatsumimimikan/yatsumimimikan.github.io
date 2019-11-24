@@ -9,15 +9,8 @@ onClick={() => {
       ) {
         DeviceMotionEvent.requestPermission();
       }
-      if (
-        DeviceOrientationEvent &&
-        DeviceOrientationEvent.requestPermission &&
-        typeof DeviceOrientationEvent.requestPermission === 'function'
-      ) {
-        DeviceOrientationEvent.requestPermission();
-      }
       props.click()
-    }}
+    }};
 
 window.addEventListener("DeviceMotionEvent", (dat) => {
     aX = dat.accelerationIncludingGravity.x;
