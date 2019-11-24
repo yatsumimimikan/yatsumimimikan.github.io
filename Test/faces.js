@@ -1,16 +1,14 @@
 //ƒJƒƒ‰—h‚ê
-var aX = 10, aY = 10, aZ = 10;
+var aX = 5, aY = 5, aZ = 5;
 
 function requestPermission(){
-    DeviceMotionEvent.requestPermission().then(response => {
-      if (response === 'granted') {
-        window.addEventListener("DeviceMotionEvent", (dat) => {
-            aX = dat.accelerationIncludingGravity.x;
-            aY = dat.accelerationIncludingGravity.y;
-            aZ = dat.accelerationIncludingGravity.z;
-        });
+      if (
+        DeviceMotionEvent &&
+        DeviceMotionEvent.requestPermission &&
+        typeof DeviceMotionEvent.requestPermission === 'function'
+      ) {
+        DeviceMotionEvent.requestPermission();
       }
-    }).catch(console.error);
 };
 /*
 function requestPermission = ()=> {
@@ -25,7 +23,11 @@ function requestPermission = ()=> {
     }).catch(console.error);
   };
 */
-
+window.addEventListener("DeviceMotionEvent", (dat) => {
+     aX = dat.accelerationIncludingGravity.x;
+     aY = dat.accelerationIncludingGravity.y;
+     aZ = dat.accelerationIncludingGravity.z;
+});
 
 //‚Ü‚Î‚½‚«‚Æ‚©
 eye_o = new Array("eye_1.png","eye_2.png","eye_3.png");
