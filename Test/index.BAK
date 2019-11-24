@@ -9,6 +9,11 @@
 </head>
 <body>
 
+    <canvas id="canvas"></canvas>
+       <div id="videobox">
+           <video id="video" autoplay playsinline></video>
+       </div>
+    <script src="camera.js"></script>
 
     <section id="body">
          <div id="hitarea"><img src="face_1.png" name="face" class="face">
@@ -17,7 +22,6 @@
     </section>
 
     <script src="faces.js"></script>
-
-    <input type="button" name="yahoo" value="このエリアを押して モーションの利用を許可してください (iOS 13+)" onClick="requestPermission()">
+    <input type="button" value="start" onClick="requestPermission()">
 </body>
 </html>
