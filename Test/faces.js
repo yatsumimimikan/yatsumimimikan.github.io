@@ -16,7 +16,7 @@ function request_permission(){
      ) {
          DeviceOrientationEvent.requestPermission();
      }
-}
+};
 
 window.addEventListener("DeviceMotionEvent", (dat) => {
     aX = dat.accelerationIncludingGravity.x;
