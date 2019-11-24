@@ -5,7 +5,7 @@ function requestPermission(){
     DeviceMotionEvent.requestPermission();
     window.addEventListener("devicemotion", (dat) => {
         aX = dat.accelerationIncludingGravity.x;
-        aY = 0;//dat.accelerationIncludingGravity.y;
+        aY = dat.accelerationIncludingGravity.y;
         aZ = dat.accelerationIncludingGravity.z;
     });
 };

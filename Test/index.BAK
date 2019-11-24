@@ -18,6 +18,6 @@
 
     <script src="faces.js"></script>
 
-    <div id="requestPermission">このエリアを押して モーションの利用を許可してください (iOS 13+) </div>
+    <input type="button" name="yahoo" value="このエリアを押して モーションの利用を許可してください (iOS 13+)" onClick="requestPermission()">
 </body>
 </html>
