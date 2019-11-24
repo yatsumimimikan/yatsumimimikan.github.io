@@ -19,8 +19,6 @@
          <div id="hitarea"><img src="face_1.png" name="face" class="face">
          <img src="mouth_1.png" name="mouth" class="mouth">
          <img src="eye_1.png" name="eyes" class="eye"></div>
-<!--上端に出るミニ映像何
-サブミットのたびに無関係なところの挙動が変わる-->
     </section>
 
     <script src="faces.js"></script>

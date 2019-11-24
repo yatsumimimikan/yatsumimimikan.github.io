@@ -1,28 +1,19 @@
 //ƒJƒƒ‰—h‚ê
 var aX = 0, aY = 0, aZ = 0;
 
-function request_permission(){
-     if (
-         DeviceMotionEvent &&
-         DeviceMotionEvent.requestPermission &&
-         typeof DeviceMotionEvent.requestPermission === 'function'
-     ) {
-         DeviceMotionEvent.requestPermission();
-     }
-     if (
-         DeviceOrientationEvent &&
-         DeviceOrientationEvent.requestPermission &&
-         typeof DeviceOrientationEvent.requestPermission === 'function'
-     ) {
-         DeviceOrientationEvent.requestPermission();
-     }
-};
+function requestPermission = ()=> {
+    DeviceMotionEvent.requestPermission().then(response => {
+      if (response === 'granted') {
+        window.addEventListener("DeviceMotionEvent", (dat) => {
+            aX = dat.accelerationIncludingGravity.x;
+            aY = dat.accelerationIncludingGravity.y;
+            aZ = dat.accelerationIncludingGravity.z;
+        });
+      }
+    }).catch(console.error);
+  };
 
-window.addEventListener("DeviceMotionEvent", (dat) => {
-    aX = dat.accelerationIncludingGravity.x;
-    aY = dat.accelerationIncludingGravity.y;
-    aZ = dat.accelerationIncludingGravity.z;
-});
+
 
 //‚Ü‚Î‚½‚«‚Æ‚©
 eye_o = new Array("eye_1.png","eye_2.png","eye_3.png");
