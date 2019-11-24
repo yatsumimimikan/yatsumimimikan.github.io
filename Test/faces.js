@@ -2,9 +2,15 @@
 var aX = 100, aY = 100, aZ = 100;
 
 function requestPermission(){
-            aX = 0;//dat.accelerationIncludingGravity.x;
-            aY = 0;//dat.accelerationIncludingGravity.y;
-            aZ = 0;//dat.accelerationIncludingGravity.z;
+    DeviceMotionEvent.requestPermission().then(response => {
+      if (response === 'granted') {
+        window.addEventListener("DeviceMotionEvent", (dat) => {
+            aX = dat.accelerationIncludingGravity.x;
+            aY = dat.accelerationIncludingGravity.y;
+            aZ = dat.accelerationIncludingGravity.z;
+        });
+      }
+    }).catch(console.error);
 };
 /*
 function requestPermission = ()=> {
