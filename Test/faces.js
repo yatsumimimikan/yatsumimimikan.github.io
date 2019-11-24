@@ -1,16 +1,13 @@
 //ƒJƒƒ‰—h‚ê
-var aX = 100, aY = 100, aZ = 100;
+var aX = 10, aY = 10, aZ = 10;
 
 function requestPermission(){
-    DeviceMotionEvent.requestPermission().then(response => {
-      if (response === 'granted') {
-        window.addEventListener("DeviceMotionEvent", (dat) => {
-            aX = dat.accelerationIncludingGravity.x;
-            aY = 0;//dat.accelerationIncludingGravity.y;
-            aZ = dat.accelerationIncludingGravity.z;
-        });
-      }
-    }).catch(console.error);
+    DeviceMotionEvent.requestPermission();
+    window.addEventListener("DeviceMotionEvent", (dat) => {
+        aX = dat.accelerationIncludingGravity.x;
+        aY = 0;//dat.accelerationIncludingGravity.y;
+        aZ = dat.accelerationIncludingGravity.z;
+    });
 };
 /*
 function requestPermission = ()=> {
