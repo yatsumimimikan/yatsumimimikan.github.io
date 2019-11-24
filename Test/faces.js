@@ -1,10 +1,10 @@
 //ƒJƒƒ‰—h‚ê
-var aX = 0, aY = 0, aZ = 0;
+var aX = 100, aY = 100, aZ = 100;
 
 function requestPermission(){
-            aX = 100;//dat.accelerationIncludingGravity.x;
-            aY = 100;//dat.accelerationIncludingGravity.y;
-            aZ = 100;//dat.accelerationIncludingGravity.z;
+            aX = 0;//dat.accelerationIncludingGravity.x;
+            aY = 0;//dat.accelerationIncludingGravity.y;
+            aZ = 0;//dat.accelerationIncludingGravity.z;
 };
 /*
 function requestPermission = ()=> {
