@@ -1,7 +1,7 @@
 //ÉJÉÅÉâóhÇÍ
 var aX = 0, aY = 0, aZ = 0;
 
-document.getElementById("requestPermission").onclick = function() {
+function requestPermission(){
             aX = 100;//dat.accelerationIncludingGravity.x;
             aY = 100;//dat.accelerationIncludingGravity.y;
             aZ = 100;//dat.accelerationIncludingGravity.z;
