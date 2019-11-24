@@ -1,11 +1,14 @@
 //ƒJƒƒ‰—h‚ê
 var aX = 0, aY = 0, aZ = 0;
 
-function requestPermission = ()=> {
+document.getElementById("requestPermission").onclick = function() {
             aX = 100;//dat.accelerationIncludingGravity.x;
             aY = 100;//dat.accelerationIncludingGravity.y;
             aZ = 100;//dat.accelerationIncludingGravity.z;
-/*    DeviceMotionEvent.requestPermission().then(response => {
+};
+/*
+function requestPermission = ()=> {
+    DeviceMotionEvent.requestPermission().then(response => {
       if (response === 'granted') {
         window.addEventListener("DeviceMotionEvent", (dat) => {
             aX = dat.accelerationIncludingGravity.x;
@@ -13,9 +16,9 @@ function requestPermission = ()=> {
             aZ = dat.accelerationIncludingGravity.z;
         });
       }
-    }).catch(console.error);*/
+    }).catch(console.error);
   };
-
+*/
 
 
 //‚Ü‚Î‚½‚«‚Æ‚©
