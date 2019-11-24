@@ -1,7 +1,7 @@
 //ƒJƒƒ‰—h‚ê
 var aX = 0, aY = 0, aZ = 0;
 
-document.getElementById("request_permission").addEventListener("click", function(){
+window.getElementById("request_permission").addEventListener("click", function(){
   if (
     DeviceMotionEvent &&
     DeviceMotionEvent.requestPermission &&
