@@ -1,5 +1,5 @@
 //ƒJƒƒ‰—h‚ê
-var aX = 10, aY = 10, aZ = 10;
+var aX = 0, aY = 0, aZ = 0;
 
 function requestPermission(){
     DeviceMotionEvent.requestPermission();
