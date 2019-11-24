@@ -1,17 +1,16 @@
 //ƒJƒƒ‰—h‚ê
 var aX = 0, aY = 0, aZ = 0;
 
-onClick={() => {
-      if (
-        DeviceMotionEvent &&
-        DeviceMotionEvent.requestPermission &&
-        typeof DeviceMotionEvent.requestPermission === 'function'
-      ) {
-        DeviceMotionEvent.requestPermission();
-      }
-      props.click()
-    }};
-
+document.getElementById("request_permission").addEventListener("click", function(){
+  if (
+    DeviceMotionEvent &&
+    DeviceMotionEvent.requestPermission &&
+    typeof DeviceMotionEvent.requestPermission === 'function'
+  ) {
+    DeviceMotionEvent.requestPermission();
+  }
+});
+DeviceMotionEvent.requestPermission();
 window.addEventListener("DeviceMotionEvent", (dat) => {
     aX = dat.accelerationIncludingGravity.x;
     aY = dat.accelerationIncludingGravity.y;
