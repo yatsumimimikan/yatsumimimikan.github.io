@@ -3,7 +3,7 @@ var aX = 10, aY = 10, aZ = 10;
 
 function requestPermission(){
     DeviceMotionEvent.requestPermission();
-    window.addEventListener("DeviceMotionEvent", (dat) => {
+    window.addEventListener("devicemotion", (dat) => {
         aX = dat.accelerationIncludingGravity.x;
         aY = 0;//dat.accelerationIncludingGravity.y;
         aZ = dat.accelerationIncludingGravity.z;
