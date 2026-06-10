@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>PNGTuber Web App</title>
+<style>
+/* 全体の余白を消去し、背景を黒に設定 */
+body { margin: 0; overflow: hidden; background-color: #000; }
+
+/* カメラ映像（背景）の設定：全画面表示で最背面に配置 */
+#camera-bg {
+width: 100vw;
+height: 100vh;
+object-fit: cover;
+position: absolute;
+z-index: 1;
+}
+
+/* アバター画像の設定：右下に配置し、傾き移動を滑らかにする */
+#avatar {
+position: absolute;
+bottom: 50px;
+right: 20px;
+width: 150px;
+z-index: 2;
+pointer-events: none;
+transition: transform 0.1s ease-out; /* 移動を滑らかにするアニメーション */
+}
+
+/* 起動ボタンのスタイル */
+#start-btn {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 3;
+padding: 20px;
+font-size: 18px;
+cursor: pointer;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 8px;
+}
+</style>
+</head>
+<body>
+
+<video id="camera-bg" autoplay playsinline muted></video>
+
+<img id="avatar" src="idle.png" alt="avatar">
+
+<button id="start-btn">システムを起動 (センサー許可)</button>
+
+<script>
+const video = document.getElementById('camera-bg');
+const avatar = document.getElementById('avatar');
+const startBtn = document.getElementById('start-btn');
+
+startBtn.addEventListener('click', async () => {
+// ボタンを非表示にする
+startBtn.style.display = 'none';
+
+// ==========================================
+// 1. 端末の傾きセンサー（ジャイロ）の許可と設定
+// ==========================================
+if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+try {
+const permissionState = await DeviceOrientationEvent.requestPermission();
+if (permissionState === 'granted') {
+window.addEventListener('deviceorientation', handleOrientation);
+} else {
+console.warn("傾きセンサーのアクセスが拒否されました");
+}
+} catch (error) {
+console.error("センサー許可要求エラー:", error);
+}
+} else {
+// iOS 13未満やPCなどの環境
+window.addEventListener('deviceorientation', handleOrientation);
+}
+
+function handleOrientation(event) {
+let gamma = event.gamma || 0; // 左右の傾き
+let beta = event.beta || 0; // 前後の傾き
+
+// 移動量の制限と感度調整（スマホの自然な保持角度 約70度を考慮）
+let moveX = Math.max(-40, Math.min(40, gamma * 1.5));
+let moveY = Math.max(-30, Math.min(30, (beta - 70) * 1.0));
+
+// アバターの表示位置を更新
+avatar.style.transform = `translate(${moveX}px, ${moveY}px)`;
+}
+
+// ==========================================
+// 2. カメラ・マイクの取得と音声解析のセットアップ
+// ==========================================
+try {
+const stream = await navigator.mediaDevices.getUserMedia({
+video: { facingMode: 'environment' }, // 背面カメラを指定
+audio: true
+});
+
+// 映像をVideoタグに接続
+video.srcObject = new MediaStream([stream.getVideoTracks()[0]]);
+
+// 音声解析（AudioContext）の準備
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const source = audioCtx.createMediaStreamSource(new MediaStream([stream.getAudioTracks()[0]]));
+const analyser = audioCtx.createAnalyser();
+analyser.fftSize = 256;
+source.connect(analyser);
+const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+// ==========================================
+// 3. ランダムな瞬き制御
+// ==========================================
+let isBlinking = false;
+
+function scheduleBlink() {
+const nextBlinkInterval = Math.random() * 4000 + 2000; // 2〜6秒のランダム間隔
+setTimeout(() => {
+isBlinking = true; // 目を閉じる
+setTimeout(() => {
+isBlinking = false; // 目を開ける
+scheduleBlink(); // 次の瞬きを予約
+}, 150); // 0.15秒間だけ目を閉じる
+}, nextBlinkInterval);
+}
+scheduleBlink(); // 瞬きループ開始
+
+// ==========================================
+// 4. 音量監視と画像切り替えループ
+// ==========================================
+function checkVolume() {
+analyser.getByteFrequencyData(dataArray);
+let sum = 0;
+for(let i = 0; i < dataArray.length; i++) {
+sum += dataArray[i];
+}
+let average = sum / dataArray.length;
+
+// 音量閾値（マイク感度に合わせて適宜15の数値を変更してください）
+if (average > 15) {
+avatar.src = isBlinking ? 'speak_blink.png' : 'speak.png'; // 発声中
+} else {
+avatar.src = isBlinking ? 'idle_blink.png' : 'idle.png'; // 待機中
+}
+
+requestAnimationFrame(checkVolume); // 次のフレームを要求
+}
+checkVolume(); // 音量監視ループ開始
+
+} catch (err) {
+alert("カメラ・マイクの取得に失敗しました: " + err.message);
+startBtn.style.display = 'block'; // エラー時はボタンを再表示
+startBtn.innerText = "エラーが発生しました（再試行）";
+}
+});
+</script>
+</body>
+</html>
