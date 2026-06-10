@@ -83,7 +83,7 @@
 
         if (orientation === 0) {
           // 【縦持ち】X軸＝左右の傾き(gamma)、Y軸＝前後の傾き(beta)
-          targetX = gamma * 1.8;
+          targetX = -gamma * 1.8;
           targetY = -(beta - 70) * 1.5; // 手元で持つ自然な角度(約70度)を基準に
         } else if (orientation === 90) {
           // 【横持ち:左回転】長辺が左右になるため、X軸とY軸のセンサーを入れ替え
@@ -91,8 +91,8 @@
           targetY = gamma * 1.5;
         } else if (orientation === -90 || orientation === 270) {
           // 【横持ち:右回転】
-          targetX = -gamma * 1.8;
-          targetY = (beta - 70) * 1.5;
+          targetX = -(beta - 65) * 1.8; 
+          targetY = -gamma * 1.5;
         }
       }
 
