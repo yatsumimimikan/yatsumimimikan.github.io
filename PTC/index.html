@@ -17,8 +17,8 @@
     
     #avatar { 
       position: absolute; 
-      bottom: 50px; 
-      right: 20px; 
+      bottom: 0px; 
+      right: 0px; 
       width: 150px; 
       z-index: 2; 
       pointer-events: none;
@@ -143,7 +143,7 @@
           const maxVolume = Math.max(...dataArray); // 配列内の最大音量を直接取得
 
           // 閾値判定 (声を遮断した瞬間に閉じます。感度は必要に応じて「25」等の数値を調整)
-          if (maxVolume > 25) {
+          if (maxVolume > 100) {
             avatar.src = isBlinking ? 'speak_blink.png' : 'speak.png';
           } else {
             avatar.src = isBlinking ? 'idle_blink.png' : 'idle.png';
